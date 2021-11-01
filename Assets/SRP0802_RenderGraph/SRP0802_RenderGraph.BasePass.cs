@@ -2,8 +2,8 @@ using Unity.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.RendererUtils;
 using UnityEngine.Experimental.Rendering.RenderGraphModule;
-using UnityEngine.Experimental.Rendering;
 
 // PIPELINE BASE PASS --------------------------------------------------------------------------------------------
 // This pass renders objects into 2 RenderTargets:
@@ -28,7 +28,7 @@ public partial class SRP0802_RenderGraph
 
         //Texture description
         TextureDesc colorRTDesc = new TextureDesc(camera.pixelWidth, camera.pixelHeight);
-        colorRTDesc.colorFormat = GraphicsFormatUtility.GetGraphicsFormat(RenderTextureFormat.Default,colorRT_sRGB);
+        colorRTDesc.colorFormat = UnityEngine.Experimental.Rendering.GraphicsFormatUtility.GetGraphicsFormat(RenderTextureFormat.Default,colorRT_sRGB);
         colorRTDesc.depthBufferBits = 0;
         colorRTDesc.msaaSamples = MSAASamples.None;
         colorRTDesc.enableRandomWrite = false;
@@ -45,7 +45,7 @@ public partial class SRP0802_RenderGraph
 
         //Texture description
         TextureDesc colorRTDesc = new TextureDesc(camera.pixelWidth, camera.pixelHeight);
-        colorRTDesc.colorFormat = GraphicsFormatUtility.GetGraphicsFormat(RenderTextureFormat.Depth,colorRT_sRGB);
+        colorRTDesc.colorFormat = UnityEngine.Experimental.Rendering.GraphicsFormatUtility.GetGraphicsFormat(RenderTextureFormat.Depth,colorRT_sRGB);
         colorRTDesc.depthBufferBits = DepthBits.Depth24;
         colorRTDesc.msaaSamples = MSAASamples.None;
         colorRTDesc.enableRandomWrite = false;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Experimental.Rendering.RenderGraphModule;
-using UnityEngine.Experimental.Rendering;
+
 
 // PIPELINE ADD PASS --------------------------------------------------------------------------------------------
 // This pass does a image effect that Albedo + Emission = final color
